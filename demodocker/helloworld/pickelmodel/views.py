@@ -3,9 +3,10 @@ import pandas
 from sklearn import model_selection
 from sklearn.linear_model import LogisticRegression
 import pickle
+from django.http import HttpResponse
 
 # Create your models here.
-class savemodeltopickel():
+def savemodeltopickel(request):
     url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv"
     
     names = ['preg', 'plas', 'pres', 'skin', 'test', 'mass', 'pedi', 'age', 'class']
@@ -26,3 +27,4 @@ class savemodeltopickel():
     #save the model to disk
     filename = 'finalized_model.sav'
     pickle.dump(model, open(filename, 'wb'))
+    return HttpResponse('Hello Kaka!')

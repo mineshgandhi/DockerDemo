@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('loadmodel/', ),
+    path('loadmodel/', views.savemodeltopickel, name='loadmodel'),
 ]
